@@ -13,23 +13,30 @@ set modifiable
 let g:NERDTreeWinSize=20
 set expandtab
 set shiftwidth=2 softtabstop=2
-set incsearch ignorecase hlsearch 
+set incsearch ignorecase hlsearch
 set backspace=2
 set number
 set background=dark
-colorscheme hybrid
+colorscheme hybrid_material
 set guifont=Monaco:h16
+let g:ctrlp_max_files = 0
 let g:enable_bold_font = 1
 let g:perforce_open_on_change = 1
 let g:perforce_open_on_save = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.bundle/*,*/log/*,*/coverage/*,*/test-integration/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.bundle/*,*/log/*,*/coverage/*,*/test-integration/*,**/node_modules/*,**/bower_components/*
 set cursorline
 filetype off
 
+autocmd BufEnter * lcd %:p:h
+autocmd BufNewFile,BufRead *.hdbs set filetype=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
+autocmd BufWritePre * StripWhitespace
+
 call plug#begin('~/.vim/plugged')
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-rails'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-ruby/vim-ruby'
@@ -41,4 +48,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-endwise'
 Plug 'scrooloose/nerdcommenter'
 Plug 'janko-m/vim-test'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
