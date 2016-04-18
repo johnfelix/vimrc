@@ -33,6 +33,7 @@ autocmd BufEnter * lcd %:p:h
 autocmd BufNewFile,BufRead *.hdbs set filetype=html.handlebars syntax=mustache | runtime! ftplugin/mustache.vim ftplugin/mustache*.vim ftplugin/mustache/*.vim
 autocmd BufWritePre * StripWhitespace
 
+"Install Vim-Plug from https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
