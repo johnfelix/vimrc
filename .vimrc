@@ -51,5 +51,7 @@ Plug 'janko-m/vim-test'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+" Install silver searcher from https://github.com/ggreer/the_silver_searcher
+" before using ag.vim
 Plug 'rking/ag.vim'
 call plug#end()
