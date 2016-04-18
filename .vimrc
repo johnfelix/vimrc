@@ -25,7 +25,7 @@ let g:perforce_open_on_change = 1
 let g:perforce_open_on_save = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.bundle/*,*/log/*,*/coverage/*,*/test-integration/*,**/node_modules/*,**/bower_components/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/.bundle/*,*/log/*,*/coverage/*,*/test-integration/*,*/node_modules/*,*/bower_components/*
 set cursorline
 filetype off
 
@@ -51,4 +51,5 @@ Plug 'janko-m/vim-test'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
 call plug#end()
